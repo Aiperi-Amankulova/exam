@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Exam</string>
+    <string name="mail">Почта</string>
+    <string name="login">Введите почту</string>
+    <string name="password">Пароль</string>
+    <string name="enter">Войти</string>
+    <string name="list">Список товаров</string>
+    <string name="name">Название товара</string>
 </resources>
