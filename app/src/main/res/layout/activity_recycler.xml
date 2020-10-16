@@ -15,10 +15,10 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/tvList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16sp"
@@ -31,16 +31,50 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/tvList"
                 tools:listitem="@layout/item_recycler" />
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/btnBack"
+                android:layout_width="90dp"
+                android:layout_height="39dp"
+                android:background="@android:color/transparent"
+                android:text="@string/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <TextView
+                android:layout_width="116dp"
+                android:layout_height="19dp"
+                android:text="@string/_50_50"
+                android:layout_marginTop="10dp"
+                android:textColor="@android:color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnGo"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintStart_toEndOf="@+id/btnBack"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btnGo"
+                android:layout_width="90dp"
+                android:layout_height="39dp"
+                android:text="@string/go"
+                android:background="@android:color/transparent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

@@ -6,4 +6,7 @@
     <string name="enter">Войти</string>
     <string name="list">Список товаров</string>
     <string name="name">Название товара</string>
+    <string name="back">Назад</string>
+    <string name="go">Вперед</string>
+    <string name="_50_50">Страница 50 из 50</string>
 </resources>
