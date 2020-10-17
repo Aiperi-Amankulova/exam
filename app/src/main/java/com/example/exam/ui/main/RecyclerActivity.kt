@@ -16,32 +16,30 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class RecyclerActivity: AppCompatActivity(), ItemListener {
-
     private val adapter = RecyclerViewAdapter(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
-        getProducts()
-        recyclerView.adapter = adapter
+        requestNEt()
     }
 
-    private fun getProducts() {
-        RetrofitBuilder.getService()?.getProductList(1)?.enqueue(object : Callback<ResponseBase> {
-            override fun onFailure(call: Call<ResponseBase>, t: Throwable) {
-                Log.d("asd","Fail")
-            }
-
+    private fun requestNEt() {
+        RetrofitBuilder.getService()?.getShow("1",)?.
+        enqueue(object : retrofit2.Callback<ResponseBase>{
             override fun onResponse(call: Call<ResponseBase>, response: Response<ResponseBase>) {
-                Log.d("fvv","OK")
                 if (response.isSuccessful && response.body() != null)
                     adapter.update(response.body()?.data)
             }
+
+            override fun onFailure(call: Call<ResponseBase>, t: Throwable) {
+                Log.d("gdgdgdsg","dsgsdg")
+            }
+
         })
     }
 
-    override fun itemsClick(item: ItemData) {
+    override fun itemsClick(item: ResponseBase) {
         val intent = Intent(this,AboutActivity::class.java)
-        intent.putExtra("data", item)
         startActivity(intent)
     }
 }

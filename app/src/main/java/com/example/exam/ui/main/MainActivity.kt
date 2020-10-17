@@ -39,20 +39,20 @@ class MainActivity : AppCompatActivity() {
         val login = etLogin.text.toString()
         val password= etPassword.text.toString()
         if (login == firstLogin&& password == firstPassword) {
-            val intent = Intent(this, ListA::class.java)
+            val intent = Intent(this, RecyclerActivity::class.java)
             startActivity(intent)
 
         }
         if(login == secondLogin && password == secondPassword){
-            val intent = Intent(this, ListA::class.java)
+            val intent = Intent(this, RecyclerActivity::class.java)
             startActivity(intent)
         }
         if(login == thirdLogin && password == thirdPassword){
-            val intent = Intent(this, ListA::class.java)
+            val intent = Intent(this, RecyclerActivity::class.java)
             startActivity(intent)
         }
         if(login == fourthLogin && password == fourthPassword){
-            val intent = Intent(this, ListA::class.java)
+            val intent = Intent(this, RecyclerActivity::class.java)
             startActivity(intent)
         }
 
