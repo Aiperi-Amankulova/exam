@@ -17,18 +17,19 @@ class ListA : AppCompatActivity(), ItemListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recycler)
-        InRetrofit()
+        requestNEt()
     }
 
-    private fun InRetrofit() {
+    private fun requestNEt() {
         RetrofitBuilder.getService()?.getShow("1",)?.
-        enqueue(object : retrofit2.Callback <ResponseBase>{
+        enqueue(object : retrofit2.Callback<ResponseBase>{
             override fun onResponse(call: Call<ResponseBase>, response: Response<ResponseBase>) {
                 if (response.isSuccessful && response.body() != null)
                     adapter.update(response.body()?.data)
             }
+
             override fun onFailure(call: Call<ResponseBase>, t: Throwable) {
-                Log.d("msnfdjfn","sdncdj")
+                Log.d("jnfj","dsnxcgsdg")
             }
 
         })

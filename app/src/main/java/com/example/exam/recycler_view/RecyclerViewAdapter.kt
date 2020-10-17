@@ -10,6 +10,7 @@ import com.example.exam.data.ItemData
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_recycler.view.*
 import kotlinx.android.synthetic.main.item_recycler.view.*
+import java.nio.file.Paths.get
 
 class RecyclerViewAdapter(private val listener: ItemListener):RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>() {
     private val list = arrayListOf<ItemData>()
